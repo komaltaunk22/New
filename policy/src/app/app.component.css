@@ -1,0 +1,53 @@
+/* General styling for the navigation bar */
+nav {
+    background-color: #f4f4f4; /* Light background */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    padding: 1rem; /* Add spacing around links */
+    display: flex;
+    justify-content: center; /* Center links horizontally */
+    gap: 1.5rem; /* Space between links */
+    border-radius: 8px; /* Smooth corners */
+  }
+  
+  /* Styling for individual links */
+  nav a {
+    text-decoration: none; /* Remove underline */
+    font-family: 'Arial', sans-serif; /* Clean, readable font */
+    font-size: 1rem; /* Appropriate size for readability */
+    font-weight: 600; /* Make text slightly bold */
+    color: #333; /* Dark text color for contrast */
+    padding: 0.5rem 1rem; /* Add internal spacing */
+    border: 2px solid transparent; /* Border for hover effect */
+    border-radius: 4px; /* Smooth corners */
+    transition: all 0.3s ease; /* Smooth animations */
+  }
+  
+  /* Hover and focus effects */
+  nav a:hover, 
+  nav a:focus {
+    color: #ffffff; /* White text */
+    background-color: #007BFF; /* Highlight color */
+    border-color: #0056b3; /* Slightly darker border */
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); /* Subtle text shadow */
+  }
+  
+  /* Active link styling (optional) */
+  nav a.active {
+    background-color: #0056b3; /* Active background */
+    color: #ffffff; /* White text */
+    border-color: #004080; /* Darker active border */
+  }
+  
+  /* Responsive design for smaller screens */
+  @media (max-width: 600px) {
+    nav {
+      flex-direction: column; /* Stack links vertically */
+      gap: 0.5rem; /* Adjust spacing */
+    }
+  
+    nav a {
+      text-align: center; /* Center-align links */
+      width: 100%; /* Full width for better touch targets */
+    }
+  }
+  

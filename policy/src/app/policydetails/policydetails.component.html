@@ -1,0 +1,77 @@
+<!-- <button (click)="downloadAsPDF()">Download as PDF</button>
+<div class="loading" *ngIf="loading">Loading...</div>
+<div class="error" *ngIf="error">{{ error }}</div>
+<div id="policy-details"  *ngIf="policy">
+  <h1>Policy Details</h1>
+
+  <h2>{{ policy.holderName }} Family Details</h2>
+  <p><strong>Agent Name:</strong> {{ policy.agentName }}</p>
+  <p><strong>Policy Number:</strong> {{ policy.policyNumber }}</p>
+  <p><strong>Policy Start Date:</strong> {{ policy.policyStartDate | date }}</p>
+  <p><strong>Policy End Date:</strong> {{ policy.policyEndDate | date }}</p>
+  <p><strong>Policy Type:</strong> {{ policy.policyType }}</p>
+
+  <h3>Policy Holder:</h3>
+  <p>
+    <strong>{{ policy.holderGender === 'Male' ? 'Husband' : 'Wife' }}:</strong>
+    {{ policy.holderName }} ({{ policy.holderAge }} years old)
+  </p>
+  <p><strong>Date of Birth:</strong> {{ policy.holderDob | date }}</p>
+
+  <h3>Spouse:</h3>
+  <p>
+    <strong>{{ policy.spouseGender === 'Female' ? 'Wife' : 'Husband' }}:</strong>
+    {{ policy.spouseName }} ({{ policy.spouseAge }} years old)
+  </p>
+  <p><strong>Date of Birth:</strong> {{ policy.spouseDob | date }}</p>
+
+  <h3>Children:</h3>
+  <ul>
+    <li *ngFor="let child of policy.children">
+      <strong>{{ child.gender === 'Female' ? 'Daughter' : 'Son' }}:</strong>
+      {{ child.name }} ({{ calculateAge(child.dob) }} years old) - DOB: {{ child.dob | date }}
+    </li>
+  </ul>
+</div>
+</div> -->
+
+<button (click)="downloadAsPDF()">Download as PDF</button>
+
+<div class="loading" *ngIf="loading">Loading...</div>
+<div class="error" *ngIf="error">{{ error }}</div>
+
+<!-- This element should contain the details to be captured in the PDF -->
+<div id="policy-details">
+  <h1>Policy Details</h1>
+
+  <div class="policy" *ngIf="policy">
+    <h2>{{ policy.holderName }} Family Details</h2>
+    <p><strong>Agent Name:</strong> {{ policy.agentName }}</p>
+    <p><strong>Policy Number:</strong> {{ policy.policyNumber }}</p>
+    <p><strong>Policy Start Date:</strong> {{ policy.policyStartDate | date }}</p>
+    <p><strong>Policy End Date:</strong> {{ policy.policyEndDate | date }}</p>
+    <p><strong>Policy Type:</strong> {{ policy.policyType }}</p>
+
+    <h3>Policy Holder:</h3>
+    <p>
+      <strong>{{ policy.holderGender === 'Male' ? 'Husband' : 'Wife' }}:</strong>
+      {{ policy.holderName }} ({{ policy.holderAge }} years old)
+    </p>
+    <p><strong>Date of Birth:</strong> {{ policy.holderDob | date }}</p>
+
+    <h3>Spouse:</h3>
+    <p>
+      <strong>{{ policy.spouseGender === 'Female' ? 'Wife' : 'Husband' }}:</strong>
+      {{ policy.spouseName }} ({{ policy.spouseAge }} years old)
+    </p>
+    <p><strong>Date of Birth:</strong> {{ policy.spouseDob | date }}</p>
+
+    <h3>Children:</h3>
+    <ul>
+      <li *ngFor="let child of policy.children">
+        <strong>{{ child.gender === 'Female' ? 'Daughter' : 'Son' }}:</strong>
+        {{ child.name }} ({{ calculateAge(child.dob) }} years old) - DOB: {{ child.dob | date }}
+      </li>
+    </ul>
+  </div>
+</div>

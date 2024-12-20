@@ -1,0 +1,30 @@
+<table id="family-table">
+  <thead>
+    <tr>
+      <th>Member Name</th>
+      <th>Date of Birth</th>
+      <th>Gender</th>
+      <th>Age</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let family of filteredPolicies">
+      <td colspan="5">
+        <table>
+         <td style="font-size: larger; font-family: Georgia, 'Times New Roman', Times, serif; background-color: greenyellow;"><b>{{family.name}} Family </b></td>
+
+          <tr *ngFor="let member of family.members" [ngClass]="{ 'birthday-highlight': isBirthday(member.dob) }">
+            <td>{{ member.name }}</td>
+            <td>{{ member.dob | date: 'dd-MM-yyyy' }}</td>
+            <td>{{ member.gender }}</td>
+            <td>{{ member.age }}</td>
+            <td>
+              <button (click)="viewMemberDetails(member)">View</button>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </tbody>
+</table>

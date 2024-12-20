@@ -1,0 +1,54 @@
+.loading {
+    text-align: center;
+    font-size: 18px;
+    color: #007bff;
+  }
+  
+  .error {
+    text-align: center;
+    font-size: 18px;
+    color: #dc3545;
+  }
+  
+  .search-bar {
+    margin-bottom: 15px;
+    display: flex;
+    gap: 10px;
+  }
+  
+  .search-bar input,
+  .search-bar button {
+    padding: 8px;
+    font-size: 14px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  thead th {
+    text-align: center; /* Center-align text in table header */
+
+    background-color: #f4f4f4;
+    padding: 10px;
+    border: 1px solid #ddd;
+  }
+  
+  tbody td {
+    padding: 10px;
+    border: 1px solid #ddd;
+  }
+  
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+  }
+  .birthday-highlight {
+    background-color: #ffeb3b; /* Yellow highlight */
+    font-weight: bold;
+  }
+  
+  

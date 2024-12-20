@@ -1,0 +1,110 @@
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f7f7f7;
+  text-align: center; /* Center-align all text by default */
+}
+
+#policy-details {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  background: linear-gradient(135deg, #9ae2ff, #c9c4fa, #fad0c4, #fbc2eb);
+  background-size: 300% 300%;
+  animation: gradientAnimation 6s ease infinite;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  color: #333;
+  text-align: center; /* Center-align the content inside the container */
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+#policy-details h1 {
+  font-size: 2.5rem; /* Adjust font size */
+  color: #292424;
+  margin-bottom: 20px;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+#policy-details h2 {
+  font-size: 1.75rem; /* Adjust font size */
+  color: #fff;
+  margin-bottom: 15px;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+#policy-details p {
+  margin: 10px 0;
+  font-size: 1.125rem; /* Increase the font size slightly */
+  color: #333;
+  text-align: center; /* Center-align text in paragraphs */
+}
+
+#policy-details strong {
+  color: #1f0505;
+}
+
+#policy-details ul {
+  padding-left: 0;
+  list-style: none;
+  display: inline-block; /* Center the list */
+}
+
+#policy-details li {
+  margin-bottom: 10px;
+  font-size: 1.125rem; /* Increase font size */
+  color: #333;
+}
+
+#policy-details .policy {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 20px;
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
+}
+
+button {
+  display: inline-block;
+  margin: 20px auto;
+  padding: 10px 30px; /* Adjust padding for better appearance */
+  font-size: 1.125rem; /* Increase button font size */
+  font-weight: bold;
+  color: #fff;
+  background: linear-gradient(135deg, #36d1dc, #5b86e5);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+.loading {
+  text-align: center;
+  color: #888;
+}
+
+.error {
+  text-align: center;
+  color: #e74c3c;
+  font-weight: bold;
+}

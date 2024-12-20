@@ -1,0 +1,108 @@
+<div class="window">
+    <div class="window-header">
+      <span class="window-title">Policy Holder Details</span>
+      <div class="window-controls">
+        <button class="control-btn minimize-btn"></button>
+        <button class="control-btn maximize-btn"></button>
+        <button class="control-btn close-btn"></button>
+      </div>
+    </div>
+    <div class="window-content">
+      <form [formGroup]="policyForm" (ngSubmit)="onSubmit()">
+        <!-- Agent Name -->
+        <div>
+          <label for="agentName">Agent Name</label>
+          <input id="agentName" formControlName="agentName" />
+        </div>
+  
+        <!-- Policy Details -->
+        <div>
+          <label for="policyNumber">Policy Number</label>
+          <input id="policyNumber" formControlName="policyNumber" />
+        </div>
+        <div>
+          <label for="policyStartDate">Policy Start Date</label>
+          <input id="policyStartDate" type="date" formControlName="policyStartDate" />
+        </div>
+        <div>
+          <label for="policyEndDate">Policy End Date</label>
+          <input id="policyEndDate" type="date" formControlName="policyEndDate" />
+        </div>
+        <div>
+          <label for="policyType">Policy Type</label>
+          <select id="policyType" formControlName="policyType">
+            <option value="Term">Term</option>
+            <option value="Health">Health</option>
+            <option value="Life">Life</option>
+            <option value="Investment">Investment</option>
+          </select>
+        </div>
+  
+        <!-- Holder Details -->
+        <div>
+          <label for="holderName">Holder Name</label>
+          <input id="holderName" formControlName="holderName" />
+        </div>
+        <div>
+          <label for="holderDob">DOB</label>
+          <input id="holderDob" type="date" formControlName="holderDob" />
+        </div>
+        <div>
+          <label for="holderAge">Age</label>
+          <input id="holderAge" type="text" formControlName="holderAge" [disabled]="true" />
+        </div>
+        <div>
+          <label for="holderGender">Gender</label>
+          <select id="holderGender" formControlName="holderGender" (change)="updateSpouseGender()">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+  
+        <!-- Spouse Details -->
+        <div>
+          <label for="spouseName">Spouse Name</label>
+          <input id="spouseName" formControlName="spouseName" />
+        </div>
+        <div>
+          <label for="spouseDob">Spouse DOB</label>
+          <input id="spouseDob" type="date" formControlName="spouseDob" />
+        </div>
+        <div>
+          <label for="spouseAge">Spouse Age</label>
+          <input id="spouseAge" formControlName="spouseAge" [disabled]="true" />
+        </div>
+        <div>
+          <label for="spouseGender">Spouse Gender</label>
+          <input id="spouseGender" formControlName="spouseGender" [disabled]="true" />
+        </div>
+  
+        <!-- Children Details -->
+        <div formArrayName="children">
+          <div *ngFor="let child of children.controls; let i = index" [formGroupName]="i">
+            <h3>Child {{ i + 1 }}</h3>
+            <label for="childName{{ i }}">Name</label>
+            <input id="childName{{ i }}" formControlName="name" />
+            <label for="childDob{{ i }}">DOB</label>
+            <input id="childDob{{ i }}" type="date" formControlName="dob" />
+            <label for="childAge{{ i }}">Age</label>
+            <input id="childAge{{ i }}" formControlName="age" [disabled]="true" />
+            <label for="childGender{{ i }}">Gender</label>
+            <select id="childGender{{ i }}" formControlName="gender">
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+            </select>
+            <button (click)="removeChild(i)" type="button">Remove</button>
+          </div>
+        </div>
+        <button (click)="addChild()" type="button">Add Child</button>
+  
+        <!-- Submit and Export -->
+        <button type="submit" [disabled]="!policyForm.valid">Submit</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- mongodb://localhost:27017/ -->
+  
